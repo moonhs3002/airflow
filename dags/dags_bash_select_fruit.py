@@ -4,6 +4,7 @@ import pendulum
 from airflow.models.dag import DAG
 
 from airflow.operators.bash import BashOperator
+from airflow.operators.empty import EmptyOperator
 
 with DAG(
     dag_id="dags_bash_select_fruit",

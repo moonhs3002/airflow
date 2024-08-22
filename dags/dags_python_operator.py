@@ -22,3 +22,5 @@ py_t1 = PythonOperator(
     python_callable=select_fruit
 
 )
+
+py_t1

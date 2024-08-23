@@ -10,6 +10,8 @@ def regist2(name, sex, *args, **kwargs):
     print(f'name : {name}')
     print(f'sex  : {sex}')
     print(f'args : {args}')
+    zsex = args(0)
+    print(f'요거되냥 :{zsex}')
     email = kwargs['email'] or None
     phone = kwargs['phone'] or None
     if email:

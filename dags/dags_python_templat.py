@@ -12,9 +12,9 @@ with DAG(
     catchup=False
 ):
     
-    def python_function1(start_date, enddate, **kwargs):
+    def python_function1(start_date, end_date, **kwargs):
         print(start_date)
-        print(enddate)
+        print(end_date)
     
     python_t1 = PythonOperator(
         task_id = 'python_t1',

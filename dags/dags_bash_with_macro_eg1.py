@@ -11,11 +11,11 @@ with DAG(
     start_date=pendulum.datetime(2023, 3, 1, tz="Asia/Seoul"),
     catchup=False
 ) as gag:
-    
-    bash_task_2 = BashOperator(
-        task_id='bash_task_2'
-        env={ 'START_DATE':'{{}}',
-             'END_DATE':'{{}}'
+    #start_date:전월말일 end_date:1일전
+    bash_task_1 = BashOperator(
+        task_id='bash_task_1',
+        env={ 'START_DATE':'{{ data_interval_start.in_timezone("Asia/Seoul") | ds}}',
+             'END_DATE':'{{ (data_interval_end.in_timezone("Asia/Seoul") - macros.delattr.relativedelta.relativetelta(days=1)) | ds }}'
         },
         bash_command='echo "START_DATE: $START_DATE" && echo "END_DATE: $END_DATE"'
     )

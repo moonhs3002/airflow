@@ -10,12 +10,11 @@ with DAG(
     start_date=pendulum.datetime(2023, 3, 1, tz="Asia/Seoul"),
     catchup=False
 ) as dag:
-    
     bash_push = BashOperator(
         task_id = 'bash_push',
-        bash_command="echo START &&"
+        bash_command="echo START && "
                      "echo XCOM_PUSHED"
-                     "{{ ti.xcom_push(key = 'bash_pushed', value = 'frist message') }} &&"
+                     "{{ ti.xcom_push(key = 'bash_pushed', value = 'frist message') }} && "
                      "echo COMPLTE"
     )
 

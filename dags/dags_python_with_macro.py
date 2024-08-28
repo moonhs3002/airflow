@@ -20,7 +20,7 @@ with DAG(
 
     def get_templates_macro(**kwargs):
 
-        templates_dict = kwargs.get('templates_dict') or {}
+        templates_dict=kwargs.get('templates_dict') or {}
         if templates_dict:
             start_date = templates_dict.get('start_date') or 'start_date none'
             end_date = templates_dict.get('end_date') or 'end_date none'

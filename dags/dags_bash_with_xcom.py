@@ -10,7 +10,6 @@ with DAG(
     start_date=pendulum.datetime(2023, 3, 1, tz="Asia/Seoul"),
     catchup=False
 ) as dag:
-    
     bash_push = BashOperator(
         task_id = 'bash_push',
         bash_command="echo START && "

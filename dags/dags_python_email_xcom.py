@@ -20,9 +20,9 @@ with DAG(
     send_email = EmailOperator(
         task_id = 'send_email',
         to = 'moonhs3002@penta.co.kr',
-        subject = '{{ data_interval_end.in_timezone("Asis/Seoul") | ds }} some_logic 처리',
+        subject= '{{ data_interval_end.in_timezone("Asis/Seoul") | ds }} some_logic 처리',
         html_content = '{{ data_interval_end.in_timezone("Asis/Seoul") | ds }} 처리결과 <br> \
-                        {{ ti.xcom_pull(task_ids = "something_task")}} 했습니다. <br>'
+            {{ ti.xcom_pull(task_ids = "something_task")}} 했습니다. <br>'
     )
 
     some_logic() >> send_email

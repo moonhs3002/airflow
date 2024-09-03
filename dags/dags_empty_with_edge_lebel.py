@@ -36,4 +36,9 @@ with DAG(
         task_id = 'empty_6'
     )
 
-    empty_1 >> Label('1과2사이') >> empty_2 >> Label('start branch') >> [empty_3, empty_4, empty_5] >> Label('end branch') >>empty_6
+    ##empty_1 >> Label('1과2사이') >> empty_2 >> Label('start branch') >> [empty_3, empty_4, empty_5] >> Label('end branch') >>empty_6
+    empty_1 >> Label('1과2사이') >> empty_2
+    empty_2 >> Label('start branch1') >> empty_3
+    empty_2 >> Label('start branch2') >> empty_4
+    empty_2 >> Label('start branch3') >> empty_5
+    [empty_3, empty_4, empty_5] >> Label('end branch') >>empty_6

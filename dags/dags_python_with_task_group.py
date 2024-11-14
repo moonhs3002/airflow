@@ -122,7 +122,10 @@ with DAG(
             op_kwargs = {'msg':'first group task no.2'}
         )
 
-        [inner_function1, inner_function2, inner_function3 , inner_function4, inner_function5] >> [inner_function6, inner_function7] >> inner_function8
+        inner_function1() >> inner_function2
+        inner_function3 >> inner_function4
+        inner_function5 >> inner_function6
+        [inner_function2, inner_function4, inner_function6, inner_function7] >> inner_function8
 
     
     group_1() >> group_2

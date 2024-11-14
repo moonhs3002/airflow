@@ -70,8 +70,8 @@ with DAG(
 
         
         inner_function1()>>inner_function3
-        inner_function2,inner_function3,inner_function4 >> inner_function5 >> inner_function6
-        inner_function2,inner_function2 >> inner_function8
+        [inner_function2,inner_function3,inner_function4] >> inner_function5 >> inner_function6
+        [inner_function2,inner_function2] >> inner_function8
         
     
     with TaskGroup(group_id = 'second_group', tooltip = 'second group') as group_2:

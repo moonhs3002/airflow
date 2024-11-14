@@ -86,7 +86,44 @@ with DAG(
             op_kwargs = {'msg':'second group task no.2'}
         )
 
-        inner_function1() >> inner_function2
+        inner_function3 = PythonOperator(
+            task_id = 'inner_function3',
+            python_callable = inner_func,
+            op_kwargs = {'msg':'first group task no.2'}
+        )
+
+        inner_function4 = PythonOperator(
+            task_id = 'inner_function4',
+            python_callable = inner_func,
+            op_kwargs = {'msg':'first group task no.2'}
+        )
+
+        inner_function5 = PythonOperator(
+            task_id = 'inner_function5',
+            python_callable = inner_func,
+            op_kwargs = {'msg':'first group task no.2'}
+        )
+
+        inner_function6 = PythonOperator(
+            task_id = 'inner_function6',
+            python_callable = inner_func,
+            op_kwargs = {'msg':'first group task no.2'}
+        )
+
+        inner_function7 = PythonOperator(
+            task_id = 'inner_function7',
+            python_callable = inner_func,
+            op_kwargs = {'msg':'first group task no.2'}
+        )
+
+        inner_function8 = PythonOperator(
+            task_id = 'inner_function8',
+            python_callable = inner_func,
+            op_kwargs = {'msg':'first group task no.2'}
+        )
+
+        [inner_function1(), inner_function2, inner_function3 , inner_function4, inner_function5] >> [inner_function6, inner_function7] >> inner_function8
+
     
     group_1() >> group_2
 

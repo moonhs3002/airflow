@@ -23,7 +23,7 @@ with DAG(
         bash_command="echo $HOSTNAME",
     )
 
-        bash_t3 = BashOperator(
+    bash_t3 = BashOperator(
         task_id="bash_t3",
         bash_command="echo $HOSTNAME",
     )
